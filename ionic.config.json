@@ -1,0 +1,7 @@
+{
+  "name": "panama",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
