@@ -1,0 +1,46 @@
+<ion-content>
+	<figure class="ion-text-center" padding>
+		<img src="assets/img/logo.png" />
+	</figure>
+	<form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+		<ion-item>
+			<ion-label>E-mail</ion-label>
+			<ion-input formControlName="email"></ion-input>
+		</ion-item>
+		<div class="validation_error">
+			<ng-container *ngFor="let validation of validations_message.email">
+				<div
+					*ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)"
+				>
+					{{validation.message}}
+				</div>
+			</ng-container>
+		</div>
+		<ion-item>
+			<ion-label>Password</ion-label>
+			<ion-input formControlName="password" type="password"></ion-input>
+		</ion-item>
+		<div class="validation_error">
+			<ng-container *ngFor="let validation of validations_message.password">
+				<div
+					*ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)"
+				>
+					{{validation.message}}
+				</div>
+			</ng-container>
+		</div>
+
+		<ion-button expand="full" shape="round" color="success" [disabled]="!loginForm.valid" type="submit">
+			Login!
+			<ion-icon slot="icon-only" name="add"></ion-icon>
+		</ion-button>
+	</form>
+</ion-content>
+<ion-footer class="ion-text-center">
+	<ion-toolbar>
+		<ion-button (click)="goToRegister()"
+			>Click para registrar
+			<ion-icon slot="icon-only" name="add"></ion-icon>
+		</ion-button>
+	</ion-toolbar>
+</ion-footer>

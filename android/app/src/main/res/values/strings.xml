@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">VigiaPanama</string>
+    <string name="title_activity_main">VigiaPanama</string>
+    <string name="package_name">io.pananavigia.com</string>
+    <string name="custom_url_scheme">io.pananavigia.com</string>
+</resources>
